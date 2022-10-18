@@ -27,12 +27,12 @@ export class UsuarioService {
   }
 
   salvaToken(token: string) {
-    return this.tokenService.salvaToken(token);
+    this.tokenService.salvaToken(token);
     this.decodificaJWT();
   }
 
   logout() {
-    return this.tokenService.excluiToken();
+    this.tokenService.excluiToken();
     this.usuarioSubject.next({});
   }
 
